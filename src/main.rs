@@ -23,6 +23,12 @@ enum Commands {
         #[arg(short, long, default_value = "3000")]
         port: u16,
     },
+    /// Initialize a new typsy project in the specified directory.
+    Init {
+        /// Directory to initialize (defaults to current directory)
+        #[arg(short, long)]
+        dir: Option<PathBuf>,
+    },
 }
 
 fn main() {
@@ -58,6 +64,13 @@ fn main() {
                     std::process::exit(1);
                 }
             });
+        }
+        Some(Commands::Init { dir }) => {
+            let project_dir = dir.unwrap_or_else(|| std::env::current_dir().unwrap());
+            if let Err(e) = typsy::init::init_new_typsy_project(&project_dir) {
+                tracing::error!("project initialization error: {e}");
+                std::process::exit(1);
+            }
         }
         None => {
             Cli::command().print_help().unwrap();

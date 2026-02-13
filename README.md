@@ -15,7 +15,7 @@ cargo install --git https://github.com/nleroy917/typsy.git
 To create a new typsy site, run the following command in your terminal:
 
 ```bash
-typsy new my-site
+typsy init my-site
 ```
 
 This will create a new directory called `my-site` with the following structure:
