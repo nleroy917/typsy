@@ -18,3 +18,14 @@ tar = "0.4"
 ureq = "2.9"
 time = "0.3"
 typst-html = "0.14.2"
+
+# async runtime & web framework
+tokio = { version = "1", features = ["full"] }
+axum = "0.8"
+tower-http = { version = "0.6", features = ["fs"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+futures-util = "0.3"
+
+# logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt"] }

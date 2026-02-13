@@ -132,7 +132,7 @@ impl ContentRenderer {
             return Ok(path);
         }
 
-        eprintln!("downloading {package}");
+        tracing::info!("downloading {package}");
         let url = format!(
             "https://packages.typst.org/{}/{}-{}.tar.gz",
             package.namespace, package.name, package.version,
