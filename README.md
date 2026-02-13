@@ -1,4 +1,4 @@
-# typsy
+# 🍻 typsy
 typsy is a static-site generator for the typst typesetting system. It takes typst files as input and produces a static website as output, injecting any necessary HTML, CSS, and JavaScript to make the site functional.
 
 This is very experimental and for my personal use, so expect things to break and be very rough around the edges. If you want to contribute, please do!
