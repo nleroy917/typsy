@@ -26,7 +26,6 @@ enum Commands {
     /// Initialize a new typsy project in the specified directory.
     Init {
         /// Directory to initialize (defaults to current directory)
-        #[arg(short, long)]
         dir: Option<PathBuf>,
     },
 }
